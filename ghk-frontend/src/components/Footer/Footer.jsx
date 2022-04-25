@@ -23,8 +23,8 @@ function Footer() {
                     <h3>Kontakt</h3>
                     Campus Arena Gjøvik, Merkantilvegen 3, 2815 Gjøvik <br></br>
                    <a href='https://www.facebook.com/gjovikhk'>GHK Facebook </a>
-                    48005477
-                    post@gjovikhk.no 
+                    <a href=''>48005477</a>
+                    <a href=''>post@gjovikhk.no </a>
                     <a href='https://www.instagram.com/gjovikhk/'>GHK Instagram</a>
                 </div>
                 <div className="column" id='stream'>
@@ -34,8 +34,10 @@ function Footer() {
                 
         </div>
         <div className='copyright'>
-                   <div className='copyrightTekst'> Copyright © 2022 </div>
-                   <div className='copyrightGHK'>GHK 2022</div> 
+                   <div id="copyrightWrapper">
+                       <div className='copyrightTekst'> Copyright © 2022 </div>
+                       <div className='copyrightGHK'>GHK 2022</div> 
+                   </div>
                 </div>
         </footer>
    )

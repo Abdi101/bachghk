@@ -8,7 +8,7 @@
 	display: flex;
 	justify-content: space-between;
 }
-h3{
+#postText h3{
 	margin-bottom: 2px;
 	font-size: 18px;
 	font-weight: bold;
@@ -37,4 +37,23 @@ a{
     width: 18%;
     background-size: cover;
     background-position: center;
+}
+
+
+@media only screen and (min-width: 600px) {
+	#postText h3{
+		font-size: 24px;
+		margin-bottom: 4px;
+	}
+	#aktueltPost{
+		margin-bottom: 30px;
+		padding-bottom: 22px;
+	}
+	#postImage{
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+
 }

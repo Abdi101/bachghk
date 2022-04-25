@@ -3,9 +3,9 @@
 	flex-direction: row;
 }
 
-button{
-	width: 24px;
-	height: 24px;
+#pageCounter button{
+	width: 30px;
+	height: 30px;
 	margin-right: 6px;
 	border: none;
 	border-radius: 0;
@@ -13,11 +13,22 @@ button{
 	font-weight: bold;
 	background-color: white;
 }
-button:hover{
+#pageCounter button:hover{
 	background-color: #ccc	;
 }
-button.active{
+#pageCounter button.active{
 	background-color: #004B94;
 	color: white;
 }
 
+@media only screen and (min-width: 600px) {
+	#pageCounter button{
+		width: 40px;
+		height: 40px;
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
