@@ -5,7 +5,8 @@ const getAll = (url, params) =>{
 }
 
 const getOne = (url, id) =>{
- return axios.get(`http://localhost:1337/api/${url}/${id}`);}
+ return axios.get(`http://localhost:1337/api/${url}/${id}`);
+}
 
 
 
