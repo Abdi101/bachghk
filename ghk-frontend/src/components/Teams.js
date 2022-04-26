@@ -12,7 +12,7 @@ class Teams extends React.Component {
     // Fetch all teams  immediately after the component is mounted
     componentDidMount = async () => {
       try {
-        const response = await getAll('teams');
+        const response = await getAll('teams', '?populate=*');
         this.setState({ content: response.data.data });
       } catch (error) {
         this.setState({ error });

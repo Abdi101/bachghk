@@ -4,7 +4,8 @@
   "info": {
     "singularName": "header-link",
     "pluralName": "header-links",
-    "displayName": "header-link"
+    "displayName": "header-link",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,16 @@
   "pluginOptions": {},
   "attributes": {
     "link": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::link.link",
+      "mappedBy": "header_link"
+    },
+    "URL": {
       "type": "string"
     }
   }

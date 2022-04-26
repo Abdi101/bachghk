@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Team({data}) {
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const {id,attributes} = data;
   return (
     <div>

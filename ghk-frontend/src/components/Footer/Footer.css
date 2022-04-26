@@ -7,7 +7,7 @@ footer{
 .footerBox{
     padding: 0 10px;
 }
-a{
+.footerBox a{
     color: white;
     margin-bottom: 6px;
 }
@@ -56,7 +56,7 @@ a{
         max-width: 1200px;
         margin: auto;
     }
-    a{
+    .footerBox a{
         margin-bottom: 10px;
     }
     .column>h3{

@@ -30,6 +30,12 @@
       "relation": "manyToOne",
       "target": "api::card.card",
       "inversedBy": "links"
+    },
+    "header_link": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::header-link.header-link",
+      "inversedBy": "links"
     }
   }
 }

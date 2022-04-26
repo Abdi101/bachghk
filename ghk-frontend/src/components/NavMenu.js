@@ -25,8 +25,7 @@ const NavMenu = () => {
           <ul
           // check if mobile 
             className={isMobile ? "nav-link-mobile" : "nav-link"}
-            onClick={() => setIsMobile(false)}
-          >
+            onClick={() => setIsMobile(false)}>
             <li className="links dropdown klubb">
               <Link className="anchor" to="/klubben">
                 Klubben
