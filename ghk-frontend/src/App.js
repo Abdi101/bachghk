@@ -1,15 +1,7 @@
 import React from 'react';
 import './App.css';
-<<<<<<< HEAD
-import Teams from './components/Teams';
-
-
-function App() {
-  return (
-    <div className='App'>
-      <Teams />
-=======
 import PostContainer from './components/postContainer';
+import Teams from './components/Teams';
 import "./App.css";
 import NavMenu from "./components/NavMenu";
 import Footer from "./components/Footer/Footer";
@@ -25,15 +17,14 @@ function App() {
         <NavMenu />
         <div className="App">
           <Routes>
-            <Route path="/" /*element={<Home />}*/ />
+            <Route path="/posts" element={<PostContainer/>} />
+            <Route path="/teams" element={<Teams />} />
           </Routes>
         </div>
         <Header/>  
         <Card/>
-        <PostContainer/>
         <Footer />
       </Router>
->>>>>>> 5af74034fc84bed9f15693c1cb2e474d7ed94cd2
     </div>
   );
 }
