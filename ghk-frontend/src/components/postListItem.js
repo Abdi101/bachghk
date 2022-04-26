@@ -4,9 +4,17 @@ import clockIcon from '../assets/icons8-clock.svg';
 import PostPreview from './postPreview';
 
 class PostListItem extends React.Component {
+  checkIfImageExists(){
+    if( this.props.data.attributes.thumbnail.data != null ){
+      console.log("exists");
+      return  "http://localhost:1337"+this.props.data.attributes.thumbnail.data.attributes.url;
+    }
+    
+  }
+
   render() {
     const savedProps = this.props.data;
-    console.log(savedProps);
+    //console.log(savedProps.attributes.thumbnail.data.attributes.url);
     return (
       <div id="aktueltPost">
       <div id="postText">
@@ -15,7 +23,7 @@ class PostListItem extends React.Component {
         <PostPreview  data = {savedProps.attributes.postText}/>
         <a href="./">les mer</a>
       </div>
-      <div id="postImage" style={{ backgroundImage: `url(https://aitor.online/media/images/gherkin_build/gherkin_build_finished3.jpg.png)` }}></div>
+      <div id="postImage" style={{ backgroundImage: `url(${this.checkIfImageExists()})` }}></div>
       </div>
     );
   }

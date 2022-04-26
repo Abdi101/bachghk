@@ -1,10 +1,9 @@
+import "./card.css";
 import React from 'react';
-import PostList from './postList';
-import Pagination from './pagination';
-import './postContainer.css';
+import CardList from "./cardList";
 import { getAll } from '../API/testingAPI';
 
-class PostContainer extends React.Component {
+class Card extends React.Component {
     state = {
         content: [],
         error: null,
@@ -14,7 +13,7 @@ class PostContainer extends React.Component {
     // Fetch your restaurants immediately after the component is mounted
     componentDidMount = async () => {
       try {
-        const response = await getAll('posts', '?populate=*&sort=publishedAt:desc');
+        const response = await getAll('cards', '?populate=links');
         this.setState({ content: response.data.data });
       } catch (error) {
         this.setState({ error });
@@ -26,13 +25,24 @@ class PostContainer extends React.Component {
     const { error, content } = this.state;
     
     return (
-      <div id="postContainer">
-      <h1>Aktuelt: </h1>
-      <PostList info = {this.state.content}/>
-        <Pagination/>
-      </div>
+    <div id="cardContainer">
+    {this.state.content.map(content => (
+    <CardList key={content.id} data={content.attributes} />
+    ))}
+    </div>
     );
   }
 }
 
-export default PostContainer;
+
+
+const FFFFF = () => {
+  return (
+    <div id="cardContainer">
+      <CardList cards={true}/>
+      <CardList cards={true}/>
+    </div>
+  );
+};
+
+export default Card;

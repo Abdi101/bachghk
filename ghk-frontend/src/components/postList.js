@@ -5,7 +5,6 @@ import './postList.css';
 class PostList extends React.Component {
   render() {
 
-    console.log(this.props.info);
     return (
 
       <ul id="postList">
