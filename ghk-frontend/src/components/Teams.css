@@ -28,8 +28,8 @@
 }
 
 .team_heading {
-  font-size: 36px;
-  margin: 20px 0;
+  font-size: 32px;
+  margin: 10px 0;
 }
 .team_list {
   font-size: 18px;
@@ -44,7 +44,7 @@
 }
 ._flex {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -52,8 +52,7 @@
 @media only screen and (min-width: 600px) {
   #teams-container{
     max-width: 1200px;
-    margin: auto;
-    margin-bottom: 30px;
+    margin: 30px auto;
   }
 }
 

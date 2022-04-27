@@ -9,6 +9,7 @@ const getOne = (url, id) => {
 }
 
 const getSlugged = (url, slug) => {
+    console.log(`http://localhost:1337/api/${url}?filters\[Slug\][$eq]=${slug}`);
     return axios.get(`http://localhost:1337/api/${url}?filters\[Slug\][$eq]=${slug}`);
 }
 

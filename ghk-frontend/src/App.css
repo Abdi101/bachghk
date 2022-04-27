@@ -9,6 +9,15 @@
 
 
 @media only screen and (min-width: 600px) {
+  #app{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  #app > main{
+    flex: 1;
+    margin-bottom: 30px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {

@@ -26,11 +26,9 @@
         "audios"
       ]
     },
-    "players": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::player.player",
-      "mappedBy": "team"
+    "aboutTeam": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

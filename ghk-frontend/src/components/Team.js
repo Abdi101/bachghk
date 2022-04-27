@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import ReactMarkdown from 'react-markdown';
 
 function Team({data}) {
   const [active, setActive] = useState(false);
-  const {id,attributes} = data;
+  let {id,attributes} = data;
   return (
     <div>
       <div className="team_title" onClick={() => setActive(!active)}>
@@ -16,16 +17,7 @@ function Team({data}) {
         <h3 className="team_heading">{attributes.name}</h3>
 
         <div className="_flex">
-          <ul className="team_list">
-            {attributes.players.data.map((player,index)=>(
-                <li key={index}>
-                  <h5 key={index+1}>{player.attributes.name}</h5>
-                  <p key={index+2}>{player.attributes.position}</p>
-                  <p key={index+3}>{player.attributes.telephone}</p>
-                  <p key={index+4}>{player.attributes.email}</p>
-                </li>
-            ))}
-          </ul>
+        <ReactMarkdown>{attributes.aboutTeam}</ReactMarkdown>
           <img
             src={process.env.PUBLIC_URL + "team-image.jpg"}
             alt="Team Image"

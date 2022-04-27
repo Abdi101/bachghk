@@ -1,20 +1,36 @@
-#Dashboard{
+#Post{
 	width: 100%;
 	max-width: 1200px;
 	margin: 30px auto;
 	padding: 0 10px;
 }
 
-#Dashboard ul{
+#Post ul{
 	list-style: inside;
 }
 
-#Dashboard p, #Dashboard ul{
+#Post p, #Post ul{
 	margin-bottom: 12px;
 }
 
+.zoom{
+	max-height: 120px;
+}
+
+.postImagePreview{
+	margin-right: 15px;
+	margin-bottom: 10px;
+}
+
+#imgContainer {
+    display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
 @media only screen and (min-width: 600px) {
-	#Dashboard{
+	#Post{
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
