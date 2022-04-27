@@ -1,6 +1,4 @@
-* {
-  list-style-type: none;
-}
+
 
 .App {
   padding: 24px;
@@ -52,7 +50,11 @@
 }
 
 @media only screen and (min-width: 600px) {
-
+  #teams-container{
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 30px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {

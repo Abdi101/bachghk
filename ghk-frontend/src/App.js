@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import PostContainer from './components/postContainer';
 import Teams from './components/Teams';
+import Dashboard from './components/Dashboard';
 import "./App.css";
 //import NavMenu from "./components/NavMenu";
 import Footer from "./components/Footer/Footer";
@@ -15,13 +16,17 @@ function App() {
   return (
     <div id="app">
       <Router>
-        <NewNav /> 
-        <Header/>
-        <Card/>
+        <NewNav/>
+        
+        
           <Routes>
+            <Route path="/" element={
+              <>  <Header/><Card/><PostContainer/>  </>
+            }/>
             <Route path="/teams" element={<Teams />} />
+            <Route path="/:id" element={<Dashboard />} />
           </Routes>
-        <PostContainer/>
+        
         <Footer />
       </Router>
     </div>

@@ -3,6 +3,8 @@ import logo from "../assets/img/logo.PNG";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import arrowIcon from '../assets/arrow.svg';
 import logoWide from '../assets/ghkLogoWide.svg';
+import menuCross from '../assets/menu-cross.svg';
+import menuBars from '../assets/menu-bars.svg';
 import { Link } from "react-router-dom";
 import MenuItem from "./MenuItem";
 import React from 'react';
@@ -12,6 +14,7 @@ class NewNav extends React.Component {
     state = {
         content: [],
         error: null,
+        isMobile: true
       };
 
     // Fetch your restaurants immediately after the component is mounted
@@ -38,7 +41,10 @@ class NewNav extends React.Component {
         </div>
       </div>
       <div id="navMain">
-      <div id="navButtons">
+        <button className="mobile-icon" onClick={() => (this.setState({isMobile: !this.state.isMobile}))}>
+        {this.state.isMobile ? (<img src={menuBars} />) : (<img src={menuCross} />)}
+        </button>
+      <div id="navButtons" className={this.state.isMobile ? ("visible") : ("")} >
           {this.state.content.map(content => (
             <MenuItem key={content.id} data={content}/>
           ))}
