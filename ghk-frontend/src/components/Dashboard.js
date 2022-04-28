@@ -20,9 +20,9 @@ dayjs.extend(customParseFormat);
 
 function Dashboard (props)  {
   const [val, setVal] = useState([]);
+  console.log(val);
   const postDate = dayjs(val.createdAt);
   const location = useLocation();
-  let now = dayjs("2022-04-26T20:42:56.755Z");
   const getAnswer = async () => {
       try {
         const response = await getSlugged('pages', location.pathname.substring(1));
@@ -38,7 +38,8 @@ function Dashboard (props)  {
     return (
       <div id="Dashboard">
         <h1>{val.TItle}</h1>
-        <span id="postDate"><b>Sist oppdatert: </b> {postDate.format( " MM/DD/YYYY kl: HH:mm")}</span>
+        { (val.length > 0) ? (<span id="postDate"><b>Sist oppdatert: </b> {postDate.format( " MM/DD/YYYY kl: HH:mm")}</span>) : ""}
+        
         <EditorJSParser data={val.Content}/>
       </div>
     );

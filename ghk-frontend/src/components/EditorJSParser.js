@@ -21,7 +21,7 @@ import {React} from 'react';
             convertedHtml += "<hr />";
             break;
           case "image":
-            convertedHtml += `<img class="img-fluid" src="${block.data.file.url}" title="${block.data.caption}" /><br /><em>${block.data.caption}</em>`;
+            convertedHtml += `<img class="img-fluid" src="http://localhost:1337${block.data.file.url}" title="${block.data.caption}" /><br /><em>${block.data.caption}</em>`;
             break;
           case "list":
             convertedHtml += "<ul>";
