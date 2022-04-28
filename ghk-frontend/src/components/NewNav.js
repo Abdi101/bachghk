@@ -20,14 +20,17 @@ class NewNav extends React.Component {
     // Fetch your restaurants immediately after the component is mounted
     componentDidMount = async () => {
       try {
-        const response = await getAll('header-links', '?populate=*');
-        this.setState({ content: response.data.data });
+        const response = await getAll('menus', '?nested');
+        this.setState({ content: response.data.menus[0] });
       } catch (error) {
         this.setState({ error });
       }
     };
 
   render() {
+    if (this.state.content.length == 0) {
+        return <div />
+    }
     return (
     <div id="navMenu">
       <div id="navHead">
@@ -45,7 +48,7 @@ class NewNav extends React.Component {
         {this.state.isMobile ? (<img src={menuBars} />) : (<img src={menuCross} />)}
         </button>
       <div id="navButtons" className={this.state.isMobile ? ("visible") : ("")} >
-          {this.state.content.map(content => (
+          {this.state.content.items.map(content => (
             <MenuItem key={content.id} data={content}/>
           ))}
       </div>

@@ -8,6 +8,18 @@
 #Post ul{
 	list-style: inside;
 }
+#Post h1{
+	margin-bottom: 6px;
+}
+
+#Post h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+#Post #postDate{
+	margin-bottom: 12px;
+}
 
 #Post p, #Post ul{
 	margin-bottom: 12px;
@@ -34,6 +46,13 @@
 		margin-top: 30px;
 		margin-bottom: 30px;
 	}
+
+	#Post h1{
+		font-size: 36px;
+	}
+	#Post h2 {
+    font-size: 28px;
+}
 }
 
 @media only screen and (min-width: 1200px) {

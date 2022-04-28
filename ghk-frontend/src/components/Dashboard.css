@@ -5,11 +5,27 @@
 	padding: 0 10px;
 }
 
+#Dashboard h2{
+	font-size: 18px;
+}
+
 #Dashboard ul{
 	list-style: inside;
 }
+#Dashboard #postDate{
+	font-size: 12px;
+	color: black;
+	margin-bottom: 10px;
+}
+#Dashboard #postDate b{
+	margin-right: 5px;
+}
 
-#Dashboard p, #Dashboard ul{
+#Dashboard h1{
+	margin-bottom: 4px;
+}
+
+#Dashboard p, #Dashboard ul, #Dashboard h2{
 	margin-bottom: 12px;
 }
 
@@ -17,6 +33,12 @@
 	#Dashboard{
 		margin-top: 30px;
 		margin-bottom: 30px;
+	}
+	#Dashboard h1{
+		font-size: 36px;
+	}
+	#Dashboard h2{
+		font-size: 28px;
 	}
 }
 

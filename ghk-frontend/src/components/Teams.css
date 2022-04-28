@@ -49,10 +49,18 @@
   flex-wrap: wrap;
 }
 
+#teams-container{
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
 @media only screen and (min-width: 600px) {
   #teams-container{
     max-width: 1200px;
     margin: 30px auto;
+  }
+  .teamContainer{
+    margin-bottom: 10px;
   }
 }
 

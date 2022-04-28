@@ -12,6 +12,7 @@ import Header from "./components/header";
 import NewNav from "./components/NewNav";
 import TestComponent from "./components/testComponent"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+var dayjs = require('dayjs');
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             <Route path="/" element={
               <>  <Header/><Card/><PostContainer/>  </>
             }/>
-            <Route path="/teams" element={<Teams />} />
+            <Route path="/lag" element={<Teams />} />
             <Route path="/posts/:id" element={<Posts />} />
             <Route path="/:id" element={<Dashboard />} />
           </Routes>

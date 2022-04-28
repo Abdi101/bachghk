@@ -65,7 +65,7 @@
 	color: black;
 	text-decoration: none;
 	font-weight: normal;
-	margin-bottom: 5px;
+	margin-bottom: 12px;
 }
 .dropdown:hover .dropMenu {
     display: flex;
@@ -104,6 +104,7 @@ a .arrow img{
 		position: absolute;
 		background-color: #00478C;
 		padding: 10px 15px;
+		padding-bottom: 4px;
 	}
 	.dropMenu a{
 		color: white;

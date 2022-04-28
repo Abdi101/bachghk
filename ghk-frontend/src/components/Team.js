@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import ReactMarkdown from 'react-markdown';
+import EditorJSParser from './EditorJSParser';
 
 function Team({data}) {
   const [active, setActive] = useState(false);
   let {id,attributes} = data;
   return (
-    <div>
+    <div className="teamContainer">
       <div className="team_title" onClick={() => setActive(!active)}>
         <h3>{attributes.name}</h3>
         <span className={active ? "icon active" : "icon"}>
@@ -17,7 +17,7 @@ function Team({data}) {
         <h3 className="team_heading">{attributes.name}</h3>
 
         <div className="_flex">
-        <ReactMarkdown>{attributes.aboutTeam}</ReactMarkdown>
+        <EditorJSParser data={attributes.aboutTeam}/>
           <img
             src={process.env.PUBLIC_URL + "team-image.jpg"}
             alt="Team Image"

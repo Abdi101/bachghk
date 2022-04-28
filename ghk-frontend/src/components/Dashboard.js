@@ -8,14 +8,21 @@ import {
   useLocation
 } from "react-router-dom";
 import { getSlugged } from '../API/testingAPI';
-import ReactMarkdown from 'react-markdown';
 import './Dashboard.css';
+import EditorJSParser from './EditorJSParser';
+var dayjs = require('dayjs');
+var utc = require('dayjs/plugin/utc');
+var timezone = require('dayjs/plugin/timezone'); // dependent on utc plugin
+dayjs.extend(utc);
+dayjs.extend(timezone);
+var customParseFormat = require('dayjs/plugin/customParseFormat');
+dayjs.extend(customParseFormat);
 
 function Dashboard (props)  {
   const [val, setVal] = useState([]);
-    const location = useLocation();
-    console.log(location.pathname.substring(1));
-
+  const postDate = dayjs(val.createdAt);
+  const location = useLocation();
+  let now = dayjs("2022-04-26T20:42:56.755Z");
   const getAnswer = async () => {
       try {
         const response = await getSlugged('pages', location.pathname.substring(1));
@@ -28,11 +35,11 @@ function Dashboard (props)  {
     useEffect(() => {
     getAnswer();
   }, []);
-
     return (
       <div id="Dashboard">
         <h1>{val.TItle}</h1>
-        <ReactMarkdown>{val.Content}</ReactMarkdown>
+        <span id="postDate"><b>Sist oppdatert: </b> {postDate.format( " MM/DD/YYYY kl: HH:mm")}</span>
+        <EditorJSParser data={val.Content}/>
       </div>
     );
   }

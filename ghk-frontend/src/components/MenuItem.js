@@ -18,21 +18,21 @@ class MenuItem extends React.Component {
     let newProps = this.props.data;
     let { isDropdown } = this.state;
     let item;
-      if(newProps.attributes.links.data.length > 0){
+      {console.log(newProps)}
+      if(newProps.children.length != 0){
         isDropdown = true;
       }
       if(!isDropdown){
-        item = <div className="navButton"><a href={newProps.attributes.URL}>{newProps.attributes.link}</a></div>;
+        item = <div className="navButton"><a key={newProps.id} href={newProps.url} target={newProps.target}>{newProps.title}</a></div>;
       } else {
         item =(
           <div className="navButton dropdown">
-            <a>{newProps.attributes.link}
+            <a>{newProps.title}
               <span className="arrow"><img src={arrowIcon} alt="" id="arrowIcon"/></span>
             </a>
             <div className="dropMenu">
-              {newProps.attributes.links.data.map(content => (
-                <a key={content.id} href={content.attributes.LinkURL}>{content.attributes.linkText}</a>
-              ))}
+            {newProps.children.map(content => (<a key={content.id} target={content.target} href={content.url}>{content.title}</a>))}
+
             </div>
           </div>
         );

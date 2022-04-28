@@ -17,43 +17,6 @@ module.exports = {
               },
             },
           ],
-          select: [
-            {
-              input: {
-                label: 'Enumeration',
-                name: 'example_enum',
-                type: 'select',
-                options: [
-                  {
-                    label: 'Option Label 1',
-                    value: 'option1',
-                  },
-                  {
-                    label: 'Option Label 2',
-                    value: 'option2',
-                  },
-                  {
-                    label: 'Option Label 3',
-                    value: 'option3',
-                  },
-                ],
-              },
-            },
-            {
-              input: {
-                label: 'Relation (hasOne)',
-                name: 'example_relation_one',
-                type: 'relation',
-              },
-            },
-            {
-              input: {
-                label: 'Relation (hasMany)',
-                name: 'example_relation_many',
-                type: 'relation',
-              },
-            },
-          ],
         },
       },
     },

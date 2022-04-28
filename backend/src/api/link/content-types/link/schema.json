@@ -25,12 +25,6 @@
       "target": "api::footer-column.footer-column",
       "inversedBy": "links"
     },
-    "card": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::card.card",
-      "inversedBy": "links"
-    },
     "header_link": {
       "type": "relation",
       "relation": "manyToOne",

@@ -13,13 +13,25 @@
 	font-size: 18px;
 	font-weight: bold;
 }
-/*p{
-	font-size: 12px;
-}*/
-a{
+.titleLink{
+	color: black;
+	text-decoration: none;
+}
+.titleLink h3{
+	color: black;
+	text-decoration: none;
+}
+
+a.titleLink:hover h3{
+	color: #004B94;
+}
+
+#postText a{
 	color: #004B94;
 	font-weight: 500;
 }
+
+
 #postDate{
 	font-size: 9px;
 	color: #999;
