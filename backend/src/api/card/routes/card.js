@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * header-link router.
+ * card router.
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::header-link.header-link');
+module.exports = createCoreRouter('api::card.card');

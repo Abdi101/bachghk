@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * header-link service.
+ * card service.
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::header-link.header-link');
+module.exports = createCoreService('api::card.card');

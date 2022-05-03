@@ -4,7 +4,8 @@
   "info": {
     "singularName": "link",
     "pluralName": "links",
-    "displayName": "Link"
+    "displayName": "Link",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,20 +16,20 @@
       "type": "string",
       "required": true
     },
-    "LinkURL": {
+    "linkURL": {
       "type": "string",
       "required": true
     },
-    "footer_column": {
+    "footerColumn": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::footer-column.footer-column",
       "inversedBy": "links"
     },
-    "header_link": {
+    "card": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::header-link.header-link",
+      "target": "api::card.card",
       "inversedBy": "links"
     }
   }

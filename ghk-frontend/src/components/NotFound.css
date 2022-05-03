@@ -1,0 +1,9 @@
+.NotFound{
+	max-width: 1200px;
+	margin: 30px auto;
+	padding: 0 10px;
+}
+
+.NotFound a{
+	color: #00478C;
+}

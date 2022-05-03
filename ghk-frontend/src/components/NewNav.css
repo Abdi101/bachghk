@@ -76,8 +76,9 @@ a .arrow{
 a .arrow img{
 	filter: invert(100%);
 }
-.follow{
+.follow a{
 	font-size: 14px;
+	color: #00478C;
 }
 
 .mobile-icon{

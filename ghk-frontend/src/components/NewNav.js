@@ -21,6 +21,7 @@ class NewNav extends React.Component {
     componentDidMount = async () => {
       try {
         const response = await getAll('menus', '?nested');
+        //console.log(response.data);
         this.setState({ content: response.data.menus[0] });
       } catch (error) {
         this.setState({ error });
@@ -28,8 +29,22 @@ class NewNav extends React.Component {
     };
 
   render() {
-    if (this.state.content.length == 0) {
-        return <div />
+    console.log(this.state.content);  
+    if (this.state.content == undefined || this.state.content.length == 0) {
+        return (
+    <div id="navMenu">
+      <div id="navHead">
+        <div id="headWrapper"> 
+          <Link className="anchor" to="/"><img src={logoWide} alt="Gjøvik handball klubb logo" id="logo"/></Link>
+          <div className="follow">
+              <a href="https://web.facebook.com/gjovikhk" target="_blank"><span>Følg oss på </span>
+              <FontAwesomeIcon className="fa-icon" icon={["fab", "facebook-f"]} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+          )
     }
     return (
     <div id="navMenu">

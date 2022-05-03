@@ -14,6 +14,9 @@ import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import EditorJSParser from './EditorJSParser';
 import clockIcon from '../assets/icons8-clock.svg';
+import NotFound from './NotFound';
+
+//no more imports
 var dayjs = require('dayjs');
 var utc = require('dayjs/plugin/utc');
 var timezone = require('dayjs/plugin/timezone'); // dependent on utc plugin
@@ -21,6 +24,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 var customParseFormat = require('dayjs/plugin/customParseFormat');
 dayjs.extend(customParseFormat);
+
 
 function Post (props)  {
   const [val, setVal] = useState([]);
@@ -48,7 +52,7 @@ function Post (props)  {
       } else { return false; }
     }
   }
-
+    if(val.length != 0){
     return (
       <div id="Post">
         <h1>{val.title}</h1>
@@ -61,7 +65,8 @@ function Post (props)  {
           ))) : ""}
         </div>
       </div>
-    );
+    );}
+    else { return <NotFound/>;}
   }
 
 export default Post;
