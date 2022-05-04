@@ -1,5 +1,4 @@
 import './NewNav.css';
-import logo from "../assets/img/logo.PNG";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import arrowIcon from '../assets/arrow.svg';
 import logoWide from '../assets/ghkLogoWide.svg';

@@ -10,7 +10,7 @@ class PostContainer extends React.Component {
         content: [],
         error: null,
         currentPage: 1,
-        pageSize: 2,
+        pageSize: 5,
         totalPages: 0,
         pageOffset: 0
       };
@@ -20,7 +20,7 @@ class PostContainer extends React.Component {
     componentDidMount = async () => {
       try {
         console.log("current page:" + this.state.currentPage);
-        const response = await getAll('posts', `?populate=*&sort=publishedAt:desc&pagination[start]=${this.state.currentPage}&pagination[limit]=${this.state.pageSize}`);
+        const response = await getAll('posts', `?populate=*&sort=publishedAt:desc&pagination[start]=${this.state.pageOffset}&pagination[limit]=${this.state.pageSize}`);
         this.setState({ content: response.data.data, totalPages: response.data.meta.pagination.total });
       } catch (error) {
         this.setState({ error });
@@ -28,15 +28,30 @@ class PostContainer extends React.Component {
     }
 
     async reRenderAndSetPage (page) {
-      this.setState({ currentPage: page });
-      console.log("current page after:" + this.state.currentPage);
+      this.state.currentPage = page;
+      this.state.currentPage > 1 ? ( this.state.pageOffset = ( page - 1 ) * this.state.pageSize ) : this.state.pageOffset = 0;
       try {
-        const response = await getAll('posts', `?populate=*&sort=publishedAt:desc&pagination[start]=${this.state.currentPage}&pagination[limit]=${this.state.pageSize}`);
+        const response = await getAll('posts', `?populate=*&sort=publishedAt:desc&pagination[start]=${this.state.pageOffset}&pagination[limit]=${this.state.pageSize}`);
         this.setState({ content: response.data.data, totalPages: response.data.meta.pagination.total });
       } catch (error) {
         this.setState({ error });
       }
-      this.setState({ currentPage: page });
+    }
+
+    pageOffsetUpdate(){
+      if(this.state.currentPage == 1){ 
+        this.state.pageOffset = 0;
+      }
+
+      else{ 
+        this.state.pageOffset = ((this.state.currentPage - 1) * this.state.pageSize);
+      }
+
+    }
+
+    onChangedPage(page){
+      this.pageOffsetUpdate();
+      this.reRenderAndSetPage(page);
     }
 
   render() {
@@ -51,7 +66,7 @@ class PostContainer extends React.Component {
         currentPage={this.state.currentPage}
         totalCount={this.state.totalPages}
         pageSize={this.state.pageSize}
-        onPageChange={page => this.reRenderAndSetPage(page)}
+        onPageChange={page => this.onChangedPage(page)}
       />
       {console.log(this.state.currentPage)}
       </div>
