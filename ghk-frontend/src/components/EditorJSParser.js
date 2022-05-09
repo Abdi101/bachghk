@@ -23,6 +23,13 @@ import {React} from 'react';
           case "image":
             convertedHtml += `<img class="img-fluid" src="http://localhost:1337${block.data.file.url}" title="${block.data.caption}" /><br /><em>${block.data.caption}</em>`;
             break;
+          case "table":
+            convertedHtml += "<table>";
+            block.data.content.forEach(function(tr) {
+              convertedHtml += `<tr>${tr[0]}</tr>`;
+            });
+            convertedHtml += "</table>";
+            break;
           case "list":
             convertedHtml += "<ul>";
             block.data.items.forEach(function(li) {

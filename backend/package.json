@@ -14,6 +14,7 @@
     "@strapi/plugin-users-permissions": "4.1.7",
     "@strapi/strapi": "4.1.7",
     "better-sqlite3": "7.4.6",
+    "mysql": "^2.18.1",
     "slugify": "^1.6.5",
     "strapi-plugin-menus": "^0.3.0",
     "strapi-plugin-react-editorjs": "^2.0.0"

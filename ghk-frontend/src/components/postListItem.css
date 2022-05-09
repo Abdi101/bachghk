@@ -16,25 +16,21 @@
 .titleLink{
 	color: black;
 	text-decoration: none;
-}
-.titleLink h3{
-	color: black;
-	text-decoration: none;
+	font-weight: bold;
 }
 
-a.titleLink:hover h3{
+a.titleLink:hover{
 	color: #004B94;
 }
 
-#postText a{
+#postText a:hover{
 	color: #004B94;
-	font-weight: 500;
 }
 
 
 #postDate{
 	font-size: 9px;
-	color: #999;
+	color: #5E5E5E;
 	display: flex;
 	align-items: center;
 	margin-bottom: 4px;
@@ -53,7 +49,7 @@ a.titleLink:hover h3{
 
 
 @media only screen and (min-width: 600px) {
-	#postText h3{
+	#postText .titleLink{
 		font-size: 24px;
 		margin-bottom: 4px;
 	}
@@ -63,6 +59,13 @@ a.titleLink:hover h3{
 	}
 	#postImage{
 		display: block;
+	}
+	#postDate{
+		font-size: 13px;
+	}
+	#clockIcon{
+		height: 15px;
+		width: 15px;
 	}
 }
 

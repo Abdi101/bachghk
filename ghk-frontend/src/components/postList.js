@@ -7,11 +7,11 @@ class PostList extends React.Component {
 
     return (
 
-      <ul id="postList">
+      <div id="postList">
           {this.props.info.map(content => (
             <PostListItem key={content.id} data={content}/>
           ))}
-        </ul>
+        </div>
     );
   }
 }

@@ -15,7 +15,6 @@ class Card extends React.Component {
       try {
         const response = await getAll('cards', '?populate=links');
         this.setState({ content: response.data.data });
-        console.log(this.state.content);
       } catch (error) {
         this.setState({ error });
       }

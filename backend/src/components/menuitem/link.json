@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_menuitem_links",
+  "info": {
+    "displayName": "link",
+    "icon": "arrow-alt-circle-right"
+  },
+  "options": {},
+  "attributes": {
+    "linkname": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

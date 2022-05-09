@@ -28,7 +28,6 @@ class NewNav extends React.Component {
     };
 
   render() {
-    console.log(this.state.content);  
     if (this.state.content == undefined || this.state.content.length == 0) {
         return (
     <div id="navMenu">
@@ -58,8 +57,8 @@ class NewNav extends React.Component {
         </div>
       </div>
       <div id="navMain">
-        <button className="mobile-icon" onClick={() => (this.setState({isMobile: !this.state.isMobile}))}>
-        {this.state.isMobile ? (<img src={menuBars} />) : (<img src={menuCross} />)}
+        <button className="mobile-icon" onClick={() => (this.setState({isMobile: !this.state.isMobile}))} aria-label="meny synlighet knapp">
+        {this.state.isMobile ? (<img src={menuBars} alt=""/>) : (<img src={menuCross} alt=""/>)}
         </button>
       <div id="navButtons" className={this.state.isMobile ? ("visible") : ("")} >
           {this.state.content.items.map(content => (

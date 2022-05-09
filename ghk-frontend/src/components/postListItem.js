@@ -26,7 +26,7 @@ class PostListItem extends React.Component {
     return (
       <div id="aktueltPost">
       <div id="postText">
-       <a href={"/posts/"+savedProps.attributes.Slug} className="titleLink"><h3>{savedProps.attributes.title}</h3></a>
+       <a href={"/posts/"+savedProps.attributes.Slug} className="titleLink">{savedProps.attributes.title}</a>
         <span id="postDate"><img src={clockIcon} alt="" id="clockIcon"/>{postDate.format("MM / DD / YYYY")}</span>
         <span><PostPreview  data = {savedProps.attributes.postText}/>
         <a href={"/posts/"+savedProps.attributes.Slug}>les mer</a></span>

@@ -19,7 +19,6 @@ class PostContainer extends React.Component {
     // Fetch your restaurants immediately after the component is mounted
     componentDidMount = async () => {
       try {
-        console.log("current page:" + this.state.currentPage);
         const response = await getAll('posts', `?populate=*&sort=publishedAt:desc&pagination[start]=${this.state.pageOffset}&pagination[limit]=${this.state.pageSize}`);
         this.setState({ content: response.data.data, totalPages: response.data.meta.pagination.total });
       } catch (error) {
@@ -68,7 +67,6 @@ class PostContainer extends React.Component {
         pageSize={this.state.pageSize}
         onPageChange={page => this.onChangedPage(page)}
       />
-      {console.log(this.state.currentPage)}
       </div>
     );
   }

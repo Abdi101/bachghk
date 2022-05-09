@@ -17,11 +17,6 @@
       "required": true,
       "default": "Overskrift"
     },
-    "date": {
-      "type": "date",
-      "default": "2022-04-01",
-      "required": true
-    },
     "images": {
       "type": "media",
       "multiple": true,
